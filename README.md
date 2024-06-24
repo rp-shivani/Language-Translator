@@ -1,6 +1,6 @@
 # Language Translator
 
-## Overview
+## Overview of this project
 Language Translator is a robust application that uses the Google API to provide translation services. The application not only translates text into different languages but also offers audio output for the translations. This project leverages SQLite as the database to manage and store various aspects of the translation service.
 
 ## Features
