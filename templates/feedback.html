@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link href="{{ url_for('static', filename='css/feed.css') }}" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Feedback Form</h1>
+    <form action="/feed" method="POST">
+      <input type="text" name="username" placeholder="Username">
+      <textarea name="feedback" placeholder="Feedback"></textarea>
+      <input type="number" name="rating" placeholder="Rating (1-5)">
+      <button type="submit">Submit Feedback</button>
+  </form>
+</div>
+</body>
+</html>

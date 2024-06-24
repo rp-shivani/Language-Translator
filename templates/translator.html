@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/dash.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <nav style="background: linear-gradient(90deg, rgb(69, 68, 78) 0%, rgb(41, 41, 68) 37%, rgb(73, 93, 97) 100%); ">
+        <header class="p-3 mb-3 border-bottom" style="user-select: auto;" style="padding:10px;">
+            <div class="container" style="user-select: auto;">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" style="user-select: auto;">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none" style="user-select: auto;">
+                  <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap" style="user-select: auto;"><use xlink:href="#bootstrap" style="user-select: auto;"></use></svg>
+                </a>
+        
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="user-select: auto;">
+                  <li style="user-select: auto;"><a href="{{url_for('index')}}" class="nav-link px-2" style="user-select: auto;color:beige;">Home</a></li>
+                  <li style="user-select: auto;"><a href="{{ url_for('logout') }}" class="nav-link px-2 link-body-emphasis" style="user-select: auto;color:beige;">Logout</a></li>
+                 
+                  <li style="user-select: auto;"><a href="{{url_for('feedback')}}" class="nav-link px-2 link-body-emphasis" style="user-select: auto;color:beige;">Feedback</a></li>
+                  
+        
+                </ul>
+        
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" style="user-select: auto;">
+                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search" style="user-select: auto;" data-listener-added_f42f5b68="true">
+                </form>
+        
+                <div class="dropdown text-end" style="user-select: auto;">
+                  <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="user-select: auto;">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" style="user-select: auto;">
+                  </a>
+                 
+                </div>
+    </nav>
+    <div class="containerr">
+    <h6>Welcome to translator page</h6>
+    <form method="POST">
+        <textarea name="text" rows="4" cols="50"></textarea><br>
+        Target Language:
+        <select name="target_language">
+            <option value="en">English</option>
+<option value="fr">French</option>
+<option value="es">Spanish</option>
+<option value="de">German</option>
+<option value="it">Italian</option>
+<option value="ar">Arabic</option>
+<option value="zh-CN">Chinese (Simplified)</option>
+<option value="zh-TW">Chinese (Traditional)</option>
+<option value="ja">Japanese</option>
+<option value="ko">Korean</option>
+<option value="pt">Portuguese</option>
+<option value="ru">Russian</option>
+<option value="hi">Hindi</option>
+<option value="bn">Bengali</option>
+<option value="te">Telugu</option>
+<option value="mr">Marathi</option>
+<option value="ta">Tamil</option>
+<option value="ur">Urdu</option>
+<option value="gu">Gujarati</option>
+<option value="kn">Kannada</option>
+<option value="ml">Malayalam</option>
+<option value="pa">Punjabi</option>
+<option value="af">Afrikaans</option>
+<option value="sq">Albanian</option>
+<option value="am">Amharic</option>
+<option value="az">Azerbaijani</option>
+<option value="eu">Basque</option>
+<option value="be">Belarusian</option>
+<option value="bs">Bosnian</option>
+<option value="bg">Bulgarian</option>
+<option value="ca">Catalan</option>
+<option value="ceb">Cebuano</option>
+<option value="co">Corsican</option>
+<option value="hr">Croatian</option>
+<option value="cs">Czech</option>
+<option value="da">Danish</option>
+<option value="nl">Dutch</option>
+<option value="eo">Esperanto</option>
+<option value="et">Estonian</option>
+<option value="fi">Finnish</option>
+        </select><br>
+        <input type="submit" value="Translate">
+        
+    </form>
+    
+    {% if translated_text %}
+        <h3>Translated Text:</h3>
+        <p>{{ translated_text }}</p>
+    {% endif %}
+
+    {% if cost %}
+    <div>
+        <p>Translation cost: {{ cost }} INR</p>
+    </div>
+{% endif %}
+</div>
+</body>
+</html>
